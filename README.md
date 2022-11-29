@@ -1,9 +1,9 @@
-
 # Connect MySql database with Python  
 
 In this section, I'll explain how to connect your MySQL database to Python and query it.
+
 ## Install "MySQL Connector"
-To access the MySQL database, Python needs a MySQL driver. You must first install the "MySQL Connector" package on your computer.
+To access the MySQL database, Python needs a MySQL driver. You must first install the `MySQL Connector` package on your computer.
 ```bash
   python -m pip install mysql-connector-python
 ```
@@ -26,35 +26,35 @@ First, establish a connection to the database. Use your MySQL database's usernam
 Now you can use SQL commands to query the database.
 
 ## Make Cursor
-You must create or include a "cursor" in your Python code in order to run MySQL queries.
+You must create or include a `cursor()` in your Python code in order to run MySQL queries.
 ```python
   mycursor = mydb.cursor()
 ```
 
 ## Creating a Database
-To create a database in MySQL, use the "CREATE DATABASE" statement.
+To create a database in MySQL, use the `CREATE DATABASE` statement.
 ```python
   mycursor.execute("CREATE DATABASE mydatabase")
 ```
 
 ## Show Database
-By using the "SHOW DATABASES" query to display every database on your system, you may verify that your database has been created.
+By using the `SHOW DATABASES` query to display every database on your system, you may verify that your database has been created.
 ```python
   mycursor.execute("SHOW DATABASES")
   
   for x in mycursor:
     print(x)
 ```
-If the above code was executed without errors, you have successfully created a database. Now that your database has been created, you can also run another SQL command to query the database.
+If the above code was executed without errors, you have successfully created a database. Now that your database has been created, you can also run another SQL command to query the database.
 
 ## Commit Changes
-To save the changes in the database, use the "commit" function.
+To save the changes in the database, use the `commit()` function.
 ```python
   mydb.commit()
 ```
 
 ## Close the Connection
-In the end, you must close the cursor and the connection. 
+In the end, you must close the cursor and the connection. 
 ```python
   mycursor.close()
   mydb.close()
