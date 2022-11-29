@@ -59,7 +59,7 @@ In the end, you must close the cursor and the connection. 
   mycursor.close()
   mydb.close()
 ```
-You can also get code snippet from [here]().
+You can also get code snippet from [here](https://github.com/kishlayjeet/Conenct-MySql-database-with-Python/blob/1ab44e07ea0d78122d00e01dc0ef1063f496df99/code-snippet.py).
 
 ## Authors
 
