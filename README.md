@@ -1,5 +1,5 @@
 
-# Conenct MySql database with Python 
+# Connect MySql database with Python  
 
 In this section, I'll explain how to connect your MySQL database to Python and query it.
 ## Install "MySQL Connector"
