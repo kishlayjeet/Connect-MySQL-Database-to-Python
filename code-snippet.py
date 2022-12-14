@@ -1,20 +1,21 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="yourusername",
-    password="yourpassword"
-  )
+  host="localhost",
+  user="<your_username>",
+  password="<your_password>",
+  database="<your_database>"
+)
 
 mycursor = mydb.cursor()
 
-mycursor.execute("CREATE DATABASE mydatabase")
+mycursor.execute("SELECT * FROM your_table")
 
-mycursor.execute("SHOW DATABASES")
-
+# Fetch and print the results
 for x in mycursor:
-    print(x)
+  print(x)
     
-connection.commit()
+mydb.commit()
 
-connection.close()
+mycursor.close()
+mydb.close()
