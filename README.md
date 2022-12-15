@@ -1,4 +1,4 @@
-# Connect Python to the MySQL database.
+# Connect MySQL database to Python.
 
 In this section, I'll explain how you can connect your MySQL database to Python and query it.
 To connect MySQL with Python, you will need to have both [MySQL](https://dev.mysql.com/downloads/) and [Python](https://www.python.org/downloads/) installed on your system.
@@ -38,7 +38,7 @@ If you don't have a database to do so, follow the below steps:
   CREATE DATABASE company;
 ```
 
-## Make a connection
+## Make a Connection
 
 Create a new MySQLConnection object by calling the `connect()` function from the mysql.connector module.
 This function takes a number of parameters that specify details about the database you want to connect to, such as:
@@ -72,7 +72,7 @@ You must create or include a cursor in your python code in order to run MySQL qu
 A cursor is a pointer to the result set of a query, and it is used to iterate over the rows of the result set.
 Cursors are useful for breaking up large result sets into smaller pieces and processing them one row at a time.
 
-## Execute a SQL query to create a table
+## Create a Table
 
 By using the `CREATE TABLE` statement, it creates a new table called `employee` with three columns:
 
@@ -89,7 +89,7 @@ By using the `CREATE TABLE` statement, it creates a new table called `employee` 
 
 Now your table has been created.
 
-## Execute a SQL query to insert some records
+## Insert some Records
 
 By using the `INSERT INTO` statement to insert some records into your employee table, you just created
 
@@ -102,7 +102,7 @@ By using the `INSERT INTO` statement to insert some records into your employee t
   ''')
 ```
 
-## Commit the changes
+## Commit the Changes
 
 It's important to remember to save your changes to the database using the `commit()` method every time you run the query.
 
@@ -112,7 +112,7 @@ It's important to remember to save your changes to the database using the `commi
 
 This is necessary because MySQL uses a transactional storage engine, which means that changes are not visible to other connections until they are committed.
 
-## Fetch and print the record
+## Fetch the Record
 
 Now, you have to use the `execute()` method of the cursor object to execute a `SELECT` statement that retrieves all rows from the employee table.
 Then you have to use a for loop to iterate over the rows returned by the query and print them to the console.
@@ -127,7 +127,7 @@ Then you have to use a for loop to iterate over the rows returned by the query a
 If the above code was executed without errors, you have successfully viewed table records.
 Now that your cursor is working, you can also run other SQL commands to query the database.
 
-## Close the connection and the cursor.
+## Close the Connection
 
 And finally, once you're done, you need to close the cursor and the connection to free up resources and prevent potential issues.
 
