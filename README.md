@@ -25,7 +25,7 @@ To import the module, use the following syntax:
   import mysql.connector
 ```
 
-## Creating a Database:
+## Create a Database:
 
 For purposes of example, we will need a sample database in MySQL that you can connect to.
 If you don't have a database to do so, follow the below steps:
