@@ -11,7 +11,7 @@ The MySQL connector package is available on the [Python Package Index (PyPI)](ht
 You can do this by running the following command in your terminal:
 
 ```bash
-  pip install mysql-connector-python
+pip install mysql-connector-python
 ```
 
 ## Import MySQL connector
@@ -22,7 +22,7 @@ This module provides a Python API for connecting to and interacting with a MySQL
 To import the module, use the following syntax:
 
 ```python
-  import mysql.connector
+import mysql.connector
 ```
 
 ## Create a Database:
@@ -35,7 +35,7 @@ If you don't have a database to do so, follow the below steps:
 - Finally, run the following command to create a database (for example, company).
 
 ```mysql
-  CREATE DATABASE company;
+CREATE DATABASE company;
 ```
 
 ## Make a Connection
@@ -51,12 +51,12 @@ This function takes a number of parameters that specify details about the databa
 For example:
 
 ```python
-  mydb = mysql.connector.connect(
-    host="localhost",
-    user="<your_username>",
-    password="<your_password>",
-    database="<your_database>"
-  )
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="<your_username>",
+  password="<your_password>",
+  database="<your_database>"
+)
 ```
 
 Once you have successfully established a connection to the database, you can start running SQL queries and performing other operations.
@@ -66,7 +66,7 @@ Once you have successfully established a connection to the database, you can sta
 You must create or include a cursor in your python code in order to run MySQL queries.
 
 ```python
-  mycursor = mydb.cursor()
+mycursor = mydb.cursor()
 ```
 
 A cursor is a pointer to the result set of a query, and it is used to iterate over the rows of the result set.
@@ -80,11 +80,11 @@ By using the `CREATE TABLE` statement, it creates a new table called `employee` 
 | :--------- | :--- | :---- |
 
 ```python
-  mycursor.execute('''CREATE TABLE employee(
-      EmployeeID int,
-      Name varchar(255),
-      Email varchar(255));
-  ''')
+mycursor.execute('''CREATE TABLE employee(
+    EmployeeID int,
+    Name varchar(255),
+    Email varchar(255));
+''')
 ```
 
 Now your table has been created.
@@ -94,12 +94,12 @@ Now your table has been created.
 By using the `INSERT INTO` statement to insert some records into your employee table, you just created
 
 ```python
-  mycursor.execute('''
-    INSERT INTO employee (EmployeeID, Name, Email)
-      VALUES (101, 'Mark', 'mark@company.com'),
-             (102, 'Robert', 'robert@company.com'),
-             (103, 'Spencer', 'spencer@company.com');
-  ''')
+mycursor.execute('''
+  INSERT INTO employee (EmployeeID, Name, Email)
+    VALUES (101, 'Mark', 'mark@company.com'),
+           (102, 'Robert', 'robert@company.com'),
+           (103, 'Spencer', 'spencer@company.com');
+''')
 ```
 
 ## Commit the Changes
@@ -107,7 +107,7 @@ By using the `INSERT INTO` statement to insert some records into your employee t
 It's important to remember to save your changes to the database using the `commit()` method every time you run the query.
 
 ```python
-  mydb.commit()
+mydb.commit()
 ```
 
 This is necessary because MySQL uses a transactional storage engine, which means that changes are not visible to other connections until they are committed.
@@ -118,10 +118,10 @@ Now, you have to use the `execute()` method of the cursor object to execute a `S
 Then you have to use a for loop to iterate over the rows returned by the query and print them to the console.
 
 ```python
-  mycursor.execute("SELECT * FROM your_table")
+mycursor.execute("SELECT * FROM your_table")
 
-  for x in mycursor:
-    print(x)
+for x in mycursor:
+  print(x)
 ```
 
 If the above code was executed without errors, you have successfully viewed table records.
@@ -132,8 +132,8 @@ Now that your cursor is working, you can also run other SQL commands to query th
 And finally, once you're done, you need to close the cursor and the connection to free up resources and prevent potential issues.
 
 ```python
-  mycursor.close()
-  mydb.close()
+mycursor.close()
+mydb.close()
 ```
 
 You can also get code snippet from [here](https://github.com/kishlayjeet/Conenct-MySql-database-with-Python/blob/1ab44e07ea0d78122d00e01dc0ef1063f496df99/code-snippet.py).
